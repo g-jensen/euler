@@ -8,15 +8,13 @@
         n))
     n))
 
-(defn prime-factors-recursive [n d]
-  (if (zero? (mod n d))
-    (cons d (prime-factors-recursive (remove-factor d n) (inc d)))
-    (if (= n 1)
-      '()
-      (prime-factors-recursive n (inc d)))))
-
 (defn prime-factors [n]
-  (prime-factors-recursive n 2))
+  (loop [n n d 2 v []]
+    (if (zero? (mod n d))
+      (recur (remove-factor d n) (inc d) (conj v d))
+      (if (= n 1)
+        v
+        (recur n (inc d) v)))))
 
 (defn euler-3 [n]
   (apply max (prime-factors n)))

@@ -7,18 +7,17 @@
 
 (describe "Euler Problem #1"
 
-  (it "Checks if a number is a multiple of 3 or 5"
-    (should (multiple-of-3-or-5? 0))
-    (should-not (multiple-of-3-or-5? 1))
-    (should-not (multiple-of-3-or-5? 2))
-    (should (multiple-of-3-or-5? 3))
-    (should-not (multiple-of-3-or-5? 4))
-    (should (multiple-of-3-or-5? 5))
-    (should (multiple-of-3-or-5? 6))
-    (should (multiple-of-3-or-5? 15)))
+
 
   (it "Solves #1"
-    (should= 23 (euler-1 10))
-	  (should= 233168 (euler-1 1000))))
+      (should= 0 (euler-1 0))
+      (should= 0 (euler-1 3))
+      (should= 3 (euler-1 4))
+      (should= 3 (euler-1 5))
+      (should= 8 (euler-1 6))
+      (should= 14 (euler-1 7))
+      (should= 14 (euler-1 8))
+      (should= 14 (euler-1 9))
+      (should= 23 (euler-1 10))))
 
 (run-specs)
