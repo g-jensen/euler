@@ -12,7 +12,7 @@
       digits
       (recur (pop-last-digit n) (conj digits (last-digit n))))))))
 
-#_(defn palindrome? [v]
+(defn palindrome? [v]
   (cond
       (= 1 (count v)) true
       (= 2 (count v)) (= (first v) (last v))

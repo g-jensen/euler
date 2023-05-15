@@ -21,7 +21,7 @@
 
     (it "Determines if a vector of arbitrary length is a palindrome"
       (should-not (palindrome? [1 2 3 1]))
-      (should (palindrome? [1 2 2 1]))))
+      (should (palindrome? [1 2 9 2 1]))))
 
   (describe "Digit Separator"
     (it "Separates a single digit"
