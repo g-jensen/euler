@@ -11,8 +11,8 @@
 (defn lazy-primes-slow-and-overflows
   ([] (lazy-primes-slow-and-overflows (iterate inc 2)))
   ([primes] (let [prime (first primes)
-                           filtered (filter #(not= 0 (mod % prime)) (rest primes))]
-                       (cons prime (lazy-seq (lazy-primes-slow-and-overflows filtered))))))
+                  filtered (filter #(not= 0 (mod % prime)) (rest primes))]
+              (cons prime (lazy-seq (lazy-primes-slow-and-overflows filtered))))))
 
 (defn lazy-primes
   ([] (lazy-primes 2 []))
