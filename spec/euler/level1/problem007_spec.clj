@@ -9,7 +9,7 @@
 
   (it "generates prime numbers"
     (should= [2 3 5 7 11] (primes 5))
-    (should= [2 3 5 7 11] (take 5 (lazy-primes-slow-and-overflows)))
+    (should= [2 3 5 7 11] (take 5 (lazy-primes-overflows)))
     (should= [2 3 5 7 11] (take 5 (lazy-primes))))
 
   (it "Solves #7"
