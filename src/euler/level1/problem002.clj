@@ -11,11 +11,8 @@
 (defn euler-2 [n]
   (apply + (take-while #(< % n) (even-fibs))))
 
-(defn add-if-even [acc j]
-  (if (even? j) (+ acc j) acc))
-
 (defn euler-2-easy [n]
   (loop [i 1 j 1 acc 0]
     (if (< j n)
-      (recur j (+ i j) (add-if-even acc j))
+      (recur j (+ i j) (+ acc (if (even? j) j 0)))
       acc)))
