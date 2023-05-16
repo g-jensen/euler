@@ -9,12 +9,13 @@
   ([n m] (cons m (lazy-seq (even-fibs m (+ (* 4 m) n))))))
 
 (defn euler-2 [n]
-  (reduce + (take-while #(< % n) (even-fibs))))
+  (apply + (take-while #(< % n) (even-fibs))))
+
+(defn add-if-even [acc j]
+  (if (even? j) (+ acc j) acc))
 
 (defn euler-2-easy [n]
   (loop [i 1 j 1 acc 0]
     (if (< j n)
-      (if (even? j)
-        (recur j (+ i j) (+ acc j))
-        (recur j (+ i j) acc))
+      (recur j (+ i j) (add-if-even acc j))
       acc)))
