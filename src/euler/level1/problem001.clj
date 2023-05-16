@@ -7,7 +7,7 @@
   (if-not (multiple-of-3-or-5? m) s (+ s m)))
 
 (defn euler-1 [n]
-  (apply + (filter #(multiple-of-3-or-5? %) (range 1 n))))
+  (apply + (filter multiple-of-3-or-5? (range 1 n))))
 
 ; Cycle:
 ; Write a failing test
