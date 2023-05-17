@@ -13,13 +13,6 @@
       (recur (pop-last-digit n) (conj digits (last-digit n))))))))
 
 (defn palindrome? [v]
-  (cond
-      (= 1 (count v)) true
-      (= 2 (count v)) (= (first v) (last v))
-      :else (and (= (first v) (last v))
-                 (palindrome? (subvec (pop v) 1)))))
-
-(defn palindrome? [v]
   (= v (reverse v)))
 
 (defn max-num-with-digits [n]
