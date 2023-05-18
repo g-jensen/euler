@@ -9,12 +9,12 @@
 
   (it "removes a factor from a given number"
     (should= 20 (remove-factor 1 20))
-    (should= 20 (remove-factor 3 20))
     (should= 1 (remove-factor 5 5))
+    (should= 20 (remove-factor 3 20))
     (should= 1 (remove-factor 2 32))
     (should= 25 (remove-factor 2 100)))
 
-  (it "finds the primes factors of a number"
+  (it "finds the prime factors of a number"
     (should= '() (prime-factors 1))
     (should= '(2) (prime-factors 2))
     (should= '(2 5) (prime-factors 100))

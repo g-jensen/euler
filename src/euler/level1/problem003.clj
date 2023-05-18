@@ -1,13 +1,11 @@
 (ns euler.level1.problem003)
 
 (defn remove-factor [factor n]
-  (cond
-    (<= factor 1) n
-    :else
-      (loop [n n]
-        (if (zero? (mod n factor))
-          (recur (/ n factor))
-          n))))
+  (loop [n n]
+    (if (and (zero? (mod n factor))
+             (not= 1 factor))
+      (recur (/ n factor))
+      n)))
 
 (defn prime-factors [n]
   (loop [n n d 2 v []]
