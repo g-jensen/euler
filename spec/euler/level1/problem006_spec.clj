@@ -13,7 +13,7 @@
   (it "finds the square of the sum of first n natural numbers"
     (should= 3025 (square-of-sum 10)))
 
-  (it "Solves #6"
+  (it "solves #6"
     (should= 2640 (euler-6 10))
     (should= 25164150 (euler-6 100))))
 
