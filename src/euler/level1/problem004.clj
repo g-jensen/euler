@@ -21,8 +21,11 @@
 (defn min-num-with-digits [n]
   (dec (int (Math/pow 10 (dec n)))))
 
+(defn range-with-digits [n]
+  (range (min-num-with-digits n) (max-num-with-digits n)))
+
 (defn euler-4 [n]
-  (let [range (range (min-num-with-digits n) (max-num-with-digits n))]
+  (let [range (range-with-digits n)]
     (apply max
            (filter #(palindrome? (digits %))
                    (for [i range j range] (* i j))))))
